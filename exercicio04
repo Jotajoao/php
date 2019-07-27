@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+   </head>
+   <body>
+	  <h2>Exercício 04 - Ler o ano de nascimento de uma pessoa e mostrar se ela pode votar e dirigir.</h2>
+	  <form action="gerarExercicio04.php" method="POST">
+	    <fieldset><legend>Ano de Nascimento</legend>
+		    <input type="number" name="anoNascimento">
+	    </fieldset>
+	    <input type="submit" valuee="Enviar">
+	  </form>
+   </body>
+</html>
+
+/*PHP*/
+<?php 
+	$anoNascimento = $_POST["anoNascimento"];
+
+	$idade = date("Y") - $anoNascimento;
+	echo "Você nasceu em $anoNascimento e tem $idade anos.";
+
+	if($idade >= 18){
+		$v = "já pode votar";
+		$d = "já pode dirigir.";
+	}else{
+		
+		$v = "não pode votar";
+		$d = "não pode dirigir.";
+	}
+	echo " Com essa idade você $v e também $d";
+ ?>
