@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+  </head>
+  <body style="background-color: white;"> /* teste*/
+	<h2>Exercício 01 - Crie um formulário que receba um login e senha de um usuário. Faça a validação dos campos de modo que usuário tenha que preencher todos os campos. Se o login for “etec” e a senha “informatica”, exiba uma mensagem na tela de “logado com sucesso” e não exiba mais o formulário de login. </h2>
+	<div>
+		<form action="gerarExercicio01.php" method="POST">
+			<h1 style="text-shadow: 1px 1px 1px black ; color: blue">LOGIN/PASSWORD</h1>
+			<input type="text" name="login" required="" placeholder="Login"><br>
+			<input type="password" name="senha" required="" placeholder="Password"><br>
+			<input type="submit" value="Enviar">
+		</form>
+	</div>
+</body>
+</html>
+
+/*php*/
+<?php 
+	$login =  ($_POST["login"]) ;
+	$password =  ($_POST["senha"]) ;
+
+	if ($login == "etec" && $password == "informatica"){
+		echo "<h3 style=color:green;>Logado com sucesso</h3>";
+	}else{
+		echo "<h3 style=color:red;>Login ou password incorreto</h3>";
+	}
+ ?>
