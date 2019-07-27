@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h2>Exercício 06 - Ler 2 notas, calcular a média e verificar a situação do aluno: Aprovado ou Reprovado.</h2>
+
+	<form action="gerarExercicio06.php" method="POST">
+		Nota 1: <input type="number" name="nota1"><br>
+		Nota 2: <input type="number" name="nota2"><br>
+				<input type="submit" value="Calcular Média">
+	</form>
+</body>
+</html>
+
+/*PHP*/
+<?php 
+	$nota1 = $_POST["nota1"];
+	$nota2 = $_POST["nota2"];
+	$media = ($nota1 + $nota2) / 2;
+	echo "A média entre $nota1 e $nota2 é igual a $media<br>";
+  
+	if($media >= 7){
+		$situação = "APROVADO";
+	}elseif($media >= 5 && $media < 7){
+		$situação = "RECUPERAÇÃO";
+	}else{
+		$situação = "REPROVADO";
+	}
+	echo "Situação do aluno: $situação";
+ ?>
