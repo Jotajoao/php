@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+	<div>
+		<h2>Exercício 02 - Ler nome, ano de nascimento e sexo de uma pessoa, mostrando sua idade atual.</h2>
+		<form action="gerarExercicio02.php" method="GET">
+		 	<input type="text" name="nome" placeholder="Nome"><br>
+			<input type="number" name="ano" placeholder="Ano de Nascimento"><br>
+			<fieldset><legend>Sexo</legend>
+				<input type="radio" name="sexo" id="masc" value="homem" checked="">
+				<label for="masc">Masculino</label><br>
+				<input type="radio" name="sexo" id="fem" value="mulher">
+				<label for="fem">Feminino</label>
+			</fieldset>
+			<input type="submit" value="Enviar">
+		</form>
+	</div>
+</body>
+</html>
+
+/*PHP*/
+<?php 
+	$nome = isset ($_GET["nome"]) ? $_GET["nome"] : "[Não informado]"; //isset verifica se foi passado um valor a variável
+	$ano = isset ($_GET["ano"]) ? $_GET["ano"] : 0; 
+	$sexo = isset ($_GET["sexo"]) ? $_GET ["sexo"] : "[sem sexo]";
+	$idade = date ("Y") - $ano;
+	echo "$nome é $sexo e tem $idade anos.";
+ ?>
+  
